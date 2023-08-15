@@ -4,7 +4,9 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.*;
 public class genres {
-    public static void main(String[] args) {
+    public static HashMap<String,String> genreDB() {
+        ResultSet rs = null;
+        HashMap<String,String> genres = new HashMap<String,String>();
         try {
             // Load the SQLite JDBC driver
             Class.forName("org.sqlite.JDBC");
@@ -16,21 +18,22 @@ public class genres {
             Statement statement = connection.createStatement();
 
             String query = "SELECT name,description FROM genres";
-            ResultSet rs = statement.executeQuery(query);
+            rs = statement.executeQuery(query);
             while(rs.next()) 
             {
                 String genreName = rs.getString("name");
                 String genreDescription = rs.getString("description");
-                System.out.println("Genre: " + genreName + " - " + genreDescription);
-
+                genres.put(genreName, genreDescription);
             }
 
             // Close resources
             statement.close();
             connection.close();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return genres;
     }
 
 }
