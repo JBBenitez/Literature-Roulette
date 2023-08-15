@@ -1,15 +1,15 @@
 The Great Literary Roullette Checklist
 Project Planning:
 
- Define the project scope, goals, and features.
- Identify the technologies you'll use (Java, HTML, CSS, etc.).
- Decide on the user interface layout and design.
+ Define the project scope, goals, and features. - check project design
+ Identify the technologies you'll use (Java, HTML, CSS, etc.). - check project design
+ Decide on the user interface layout and design. 
 
 Backend Development:
 
- Set up your development environment.
- Create a data structure (HashMap or similar) to store genre information.
- Populate the data structure with genre data, including descriptions and image URLs.
+ Set up your development environment. - done in java
+ Create a data structure (HashMap or similar) to store genre information. - using sqlite
+ Populate the data structure with genre data, including descriptions and image URLs. - done(no image urls yet)
  Implement logic to retrieve and display book recommendations based on user preferences (genre, length, age rating, star rating).
  add a randomization mechanism to select a book recommendation.
 
