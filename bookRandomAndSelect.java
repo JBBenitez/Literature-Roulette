@@ -11,7 +11,6 @@ public class bookRandomAndSelect {
     {
         String apiKey = "AIzaSyDryGZK74eOZ5yNFgrAJo1AyIqFUkcHB_Q";
         String apiUrl = "https://www.googleapis.com/books/v1/volumes?q=subject:action&key=" + apiKey + "&startIndex=20" +;
-        String jsonResponseString = "";
         try {
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
