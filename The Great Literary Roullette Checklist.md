@@ -10,7 +10,7 @@ Backend Development:
  Set up your development environment. - done in java
  Create a data structure (HashMap or similar) to store genre information. - using sqlite
  Populate the data structure with genre data, including descriptions and image URLs. - done(no image urls yet)
- Implement logic to retrieve and display book recommendations based on user preferences (genre, length, age rating, star rating).
+ Implement logic to retrieve and display book recommendations based on user preferences (genre). - done
  add a randomization mechanism to select a book recommendation.
 
 Frontend Development:

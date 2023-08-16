@@ -2,6 +2,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\jessy\\Downloads\\sqlite-jdbc-3.42.0.0.jar",
-        "libraries/sqlite-jdbc-3.42.0.0.jar"
+        "libraries/sqlite-jdbc-3.42.0.0.jar",
+        "libraries/json-simple-1.1.1.jar"
     ]
 }
