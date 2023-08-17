@@ -9,10 +9,12 @@ import org.json.simple.parser.JSONParser;
 public class bookRandomAndSelect {
     public static void main(String[] args)
     {
-        String apiKey = "AIzaSyDryGZK74eOZ5yNFgrAJo1AyIqFUkcHB_Q";
-        String apiUrl = "https://www.googleapis.com/books/v1/volumes?q=subject:action&key=" + apiKey + "&startIndex=20" +;
+        String apiUrl = "https://openlibrary.org/subjects/science_fiction.json?details=false";
+        int resultsPerPage = 1;  // Number of results per page (Open Library max limit)
+
         try {
-            URL url = new URL(apiUrl);
+            String apiUrlWithPagination = apiUrl + "&limit=" + resultsPerPage;
+            URL url = new URL(apiUrlWithPagination);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -24,25 +26,11 @@ public class bookRandomAndSelect {
                 response.append(line);
             }
             reader.close();
-            try 
-            {
-                JSONParser parser = new JSONParser();
-                JSONObject jsonResponse = (JSONObject) parser.parse(response.toString());
-                JSONArray items = (JSONArray) jsonResponse.get("items");
-                for(Object item:items)
-                {
-                    JSONObject bookInfo = (JSONObject) item;
-                    JSONObject volumeInfo = (JSONObject) bookInfo.get("volumeInfo");
-                    String title = (String) volumeInfo.get("title");
-                    System.out.println("Title: " + title);
-                }
-            }catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-            
 
-        } catch (IOException e) {
+            // Print the raw JSON response
+            System.out.println(response.toString());
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
