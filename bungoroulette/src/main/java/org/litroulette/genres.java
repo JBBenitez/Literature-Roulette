@@ -6,9 +6,9 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.*;
 public class genres {
-    public static HashMap<String,String> genreDB() {
+    public static ArrayList<String> genreDB() {
         ResultSet rs = null;
-        HashMap<String,String> genres = new HashMap<String,String>();
+        ArrayList<String> genres = new ArrayList<String>();
         try {
             // Load the SQLite JDBC driver
             Class.forName("org.sqlite.JDBC");
@@ -24,8 +24,7 @@ public class genres {
             while(rs.next()) 
             {
                 String genreName = rs.getString("name");
-                String genreDescription = rs.getString("description");
-                genres.put(genreName, genreDescription);
+                genres.add(genreName);
             }
 
             // Close resources

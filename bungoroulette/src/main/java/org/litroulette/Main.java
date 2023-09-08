@@ -21,16 +21,11 @@ public class Main
         int answer = 0;
         String [] genreArray = new String [8];
         Scanner scan = new Scanner(System.in);
-        HashMap<String,String> bookGenres = genres.genreDB();
+        ArrayList <String> bookGenres = genres.genreDB();
         while (answer!=8)
         {   
             int selections = 0;
             System.out.println("Enter a number to select a genre or quit program");
-            for (Map.Entry<String, String> entry: bookGenres.entrySet())
-            {
-                System.out.println(selections + ": "+ entry.getKey());
-                genreArray[selections++] = entry.getKey();
-            }
             System.out.println(selections + ": quit");
             answer = scan.nextInt();
             switch(answer)
